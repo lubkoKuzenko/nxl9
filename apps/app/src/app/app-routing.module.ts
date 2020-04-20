@@ -9,16 +9,22 @@ const routes: Routes = [
   },
   {
     path: 'lime',
-    loadChildren: './modules/lime-routes.module#LazyLimeRoutesModule'
+    loadChildren: () =>
+      import('./modules/lime-routes.module').then(m => m.LazyLimeRoutesModule)
   },
   {
     path: 'speed',
-    loadChildren: './modules/speed-deviation.module#LazySpeedDeviationsModule'
+    loadChildren: () =>
+      import('./modules/speed-deviation.module').then(
+        m => m.LazySpeedDeviationsModule
+      )
   },
   {
     path: 'emission',
-    loadChildren:
-      './modules/emission-deviation.module#LazyEmissionDeviationsModule'
+    loadChildren: () =>
+      import('./modules/emission-deviation.module').then(
+        m => m.LazyEmissionDeviationsModule
+      )
   }
 ];
 
