@@ -1,20 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { SpeedDeviationsModule } from '@nxl9/speed-deviations';
-import { EmissionDeviationsModule } from '@nxl9/emission-deviations';
-import { LimeRoutesModule } from '@nxl9/lime-routes';
-
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    SpeedDeviationsModule,
-    EmissionDeviationsModule,
-    LimeRoutesModule
-  ],
+  declarations: [AppComponent, DashboardComponent],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })
