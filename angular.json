@@ -120,6 +120,102 @@
           }
         }
       }
+    },
+    "emission-deviations": {
+      "projectType": "library",
+      "root": "libs/emission-deviations",
+      "sourceRoot": "libs/emission-deviations/src",
+      "prefix": "nxl9",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/emission-deviations/tsconfig.lib.json",
+              "libs/emission-deviations/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/emission-deviations/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/emission-deviations/jest.config.js",
+            "tsConfig": "libs/emission-deviations/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/emission-deviations/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "speed-deviations": {
+      "projectType": "library",
+      "root": "libs/speed-deviations",
+      "sourceRoot": "libs/speed-deviations/src",
+      "prefix": "nxl9",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/speed-deviations/tsconfig.lib.json",
+              "libs/speed-deviations/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/speed-deviations/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/speed-deviations/jest.config.js",
+            "tsConfig": "libs/speed-deviations/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/speed-deviations/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "lime-routes": {
+      "projectType": "library",
+      "root": "libs/lime-routes",
+      "sourceRoot": "libs/lime-routes/src",
+      "prefix": "nxl9",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/lime-routes/tsconfig.lib.json",
+              "libs/lime-routes/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/lime-routes/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/lime-routes/jest.config.js",
+            "tsConfig": "libs/lime-routes/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/lime-routes/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

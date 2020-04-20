@@ -25,6 +25,15 @@
     "app-e2e": {
       "tags": [],
       "implicitDependencies": ["app"]
+    },
+    "emission-deviations": {
+      "tags": []
+    },
+    "speed-deviations": {
+      "tags": []
+    },
+    "lime-routes": {
+      "tags": []
     }
   }
 }

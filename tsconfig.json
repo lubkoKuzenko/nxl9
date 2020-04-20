@@ -15,7 +15,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nxl9/emission-deviations": ["libs/emission-deviations/src/index.ts"],
+      "@nxl9/speed-deviations": ["libs/speed-deviations/src/index.ts"],
+      "@nxl9/lime-routes": ["libs/lime-routes/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
