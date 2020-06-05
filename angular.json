@@ -59,6 +59,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+            "port": 1111,
             "browserTarget": "app:build"
           },
           "configurations": {
@@ -275,6 +276,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+            "port": 2222,
             "browserTarget": "app2:build"
           },
           "configurations": {
