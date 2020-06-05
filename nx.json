@@ -20,11 +20,20 @@
   },
   "projects": {
     "app": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies": []
     },
     "app-e2e": {
       "tags": [],
       "implicitDependencies": ["app"]
+    },
+    "app2": {
+      "tags": [],
+      "implicitDependencies": []
+    },
+    "app2-e2e": {
+      "tags": [],
+      "implicitDependencies": ["app2"]
     },
     "emission-deviations": {
       "tags": []
@@ -34,13 +43,6 @@
     },
     "lime-routes": {
       "tags": []
-    },
-    "app2": {
-      "tags": []
-    },
-    "app2-e2e": {
-      "tags": [],
-      "implicitDependencies": ["app2"]
     }
   }
 }
