@@ -34,6 +34,13 @@
     },
     "lime-routes": {
       "tags": []
+    },
+    "app2": {
+      "tags": []
+    },
+    "app2-e2e": {
+      "tags": [],
+      "implicitDependencies": ["app2"]
     }
   }
 }
