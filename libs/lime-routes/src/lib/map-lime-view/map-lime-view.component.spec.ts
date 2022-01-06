@@ -8,8 +8,9 @@ describe('MapLimeViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MapLimeViewComponent ]
-    })
+    declarations: [MapLimeViewComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   }));
 

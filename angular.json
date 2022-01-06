@@ -21,8 +21,13 @@
             "polyfills": "apps/app/src/polyfills.ts",
             "tsConfig": "apps/app/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/app/src/favicon.ico", "apps/app/src/assets"],
-            "styles": ["apps/app/src/styles.scss"],
+            "assets": [
+              "apps/app/src/favicon.ico",
+              "apps/app/src/assets"
+            ],
+            "styles": [
+              "apps/app/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -36,7 +41,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -54,7 +58,10 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -81,19 +88,25 @@
               "apps/app/tsconfig.app.json",
               "apps/app/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/app/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/app/**/*"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/app/jest.config.js",
-            "tsConfig": "apps/app/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "apps/app/src/test-setup.ts"
-          }
+            "passWithNoTests": true
+          },
+          "outputs": [
+            "coverage/apps/app"
+          ]
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": []
     },
     "app-e2e": {
       "root": "apps/app-e2e",
@@ -116,107 +129,20 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/app-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/app-e2e/**"]
-          }
-        }
-      }
-    },
-    "emission-deviations": {
-      "projectType": "library",
-      "root": "libs/emission-deviations",
-      "sourceRoot": "libs/emission-deviations/src",
-      "prefix": "nxl9",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
             "tsConfig": [
-              "libs/emission-deviations/tsconfig.lib.json",
-              "libs/emission-deviations/tsconfig.spec.json"
+              "apps/app-e2e/tsconfig.e2e.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/emission-deviations/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/emission-deviations/jest.config.js",
-            "tsConfig": "libs/emission-deviations/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/emission-deviations/src/test-setup.ts"
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/app-e2e/**/*"
+            ]
           }
         }
       },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "speed-deviations": {
-      "projectType": "library",
-      "root": "libs/speed-deviations",
-      "sourceRoot": "libs/speed-deviations/src",
-      "prefix": "nxl9",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/speed-deviations/tsconfig.lib.json",
-              "libs/speed-deviations/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/speed-deviations/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/speed-deviations/jest.config.js",
-            "tsConfig": "libs/speed-deviations/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/speed-deviations/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "lime-routes": {
-      "projectType": "library",
-      "root": "libs/lime-routes",
-      "sourceRoot": "libs/lime-routes/src",
-      "prefix": "nxl9",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/lime-routes/tsconfig.lib.json",
-              "libs/lime-routes/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/lime-routes/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/lime-routes/jest.config.js",
-            "tsConfig": "libs/lime-routes/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/lime-routes/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "style": "scss"
-        }
-      }
+      "tags": [],
+      "implicitDependencies": [
+        "app"
+      ]
     },
     "app2": {
       "projectType": "application",
@@ -238,8 +164,13 @@
             "polyfills": "apps/app2/src/polyfills.ts",
             "tsConfig": "apps/app2/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/app2/src/favicon.ico", "apps/app2/src/assets"],
-            "styles": ["apps/app2/src/styles.scss"],
+            "assets": [
+              "apps/app2/src/favicon.ico",
+              "apps/app2/src/assets"
+            ],
+            "styles": [
+              "apps/app2/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -253,7 +184,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -271,7 +201,10 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -298,19 +231,25 @@
               "apps/app2/tsconfig.app.json",
               "apps/app2/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/app2/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/app2/**/*"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/app2/jest.config.js",
-            "tsConfig": "apps/app2/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "apps/app2/src/test-setup.ts"
-          }
+            "passWithNoTests": true
+          },
+          "outputs": [
+            "coverage/apps/app2"
+          ]
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": []
     },
     "app2-e2e": {
       "root": "apps/app2-e2e",
@@ -333,24 +272,131 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/app2-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/app2-e2e/**"]
+            "tsConfig": [
+              "apps/app2-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/app2-e2e/**/*"
+            ]
           }
         }
-      }
-    }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/angular"
-  },
-  "schematics": {
-    "@nrwl/angular:application": {
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
+      },
+      "tags": [],
+      "implicitDependencies": [
+        "app2"
+      ]
     },
-    "@nrwl/angular:library": {
-      "unitTestRunner": "jest"
+    "emission-deviations": {
+      "projectType": "library",
+      "root": "libs/emission-deviations",
+      "sourceRoot": "libs/emission-deviations/src",
+      "prefix": "nxl9",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/emission-deviations/tsconfig.lib.json",
+              "libs/emission-deviations/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/emission-deviations/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/emission-deviations/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": [
+            "coverage/libs/emission-deviations"
+          ]
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "tags": []
+    },
+    "lime-routes": {
+      "projectType": "library",
+      "root": "libs/lime-routes",
+      "sourceRoot": "libs/lime-routes/src",
+      "prefix": "nxl9",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/lime-routes/tsconfig.lib.json",
+              "libs/lime-routes/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/lime-routes/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/lime-routes/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": [
+            "coverage/libs/lime-routes"
+          ]
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "tags": []
+    },
+    "speed-deviations": {
+      "projectType": "library",
+      "root": "libs/speed-deviations",
+      "sourceRoot": "libs/speed-deviations/src",
+      "prefix": "nxl9",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/speed-deviations/tsconfig.lib.json",
+              "libs/speed-deviations/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/speed-deviations/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/speed-deviations/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": [
+            "coverage/libs/speed-deviations"
+          ]
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "tags": []
     }
-  },
-  "defaultProject": "app"
+  }
 }

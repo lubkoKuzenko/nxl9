@@ -4,8 +4,9 @@ import { LimeRoutesModule } from './lime-routes.module';
 describe('LimeRoutesModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [LimeRoutesModule]
-    }).compileComponents();
+    imports: [LimeRoutesModule],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   }));
 
   it('should create', () => {

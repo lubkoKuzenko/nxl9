@@ -6,43 +6,46 @@
       "dependencies": "*",
       "devDependencies": "*"
     },
-    "tsconfig.json": "*",
     "tslint.json": "*",
-    "nx.json": "*"
+    "nx.json": "*",
+    "tsconfig.base.json": "*"
   },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ],
+        "parallel": 1
       }
     }
   },
-  "projects": {
-    "app": {
-      "tags": [],
-      "implicitDependencies": []
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "app",
+  "generators": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
     },
-    "app-e2e": {
-      "tags": [],
-      "implicitDependencies": ["app"]
-    },
-    "app2": {
-      "tags": [],
-      "implicitDependencies": []
-    },
-    "app2-e2e": {
-      "tags": [],
-      "implicitDependencies": ["app2"]
-    },
-    "emission-deviations": {
-      "tags": []
-    },
-    "speed-deviations": {
-      "tags": []
-    },
-    "lime-routes": {
-      "tags": []
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
     }
+  },
+  "affected": {
+    "defaultBase": "main"
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
   }
 }

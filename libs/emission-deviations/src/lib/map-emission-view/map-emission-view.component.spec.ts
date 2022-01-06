@@ -8,8 +8,9 @@ describe('MapEmissionViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MapEmissionViewComponent ]
-    })
+    declarations: [MapEmissionViewComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   }));
 

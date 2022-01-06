@@ -8,8 +8,9 @@ describe('MapSpeedViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MapSpeedViewComponent ]
-    })
+    declarations: [MapSpeedViewComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   }));
 
