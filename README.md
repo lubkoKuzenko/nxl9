@@ -79,7 +79,7 @@ Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
 
 Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 
-<img src="https://ibb.co/f2yDS8c" width="100%" />
+<img src="https://i.ibb.co/t4vLhZd/Screenshot-2022-01-06-at-11-53-47.png" width="100%" />
 
 ## Further help
 
